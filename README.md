@@ -179,7 +179,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ## 📬 Contact
 
 **KrishiSahay Team**
-📧 [krishisahay@example.com](mailto:krishisahay@gmail.com)
+📧 [Mail](mailto:krishisahay@gmail.com)
 🔗 [Project Link](https://github.com/SachinManral/KrishiSahaay)
 
 ---
