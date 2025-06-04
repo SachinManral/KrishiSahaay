@@ -2,8 +2,6 @@
 
 # 🌾 KrishiSahay – Empowering Indian Agriculture with Technology
 
-![KrishiSahay Logo](client/public/logo192.png)
-
 **KrishiSahay** is an integrated digital platform designed to revolutionize agriculture for Indian farmers by providing real-time weather insights, AI-powered farming assistance, a digital marketplace, logistics and storage management, and a vibrant farming community — all in one place.
 
 ---
@@ -179,7 +177,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ## 📬 Contact
 
 **KrishiSahay Team**
-📧 [Mail](mailto:krishisahaay@gmail.com)
+📧 📧 [krishisahaay@gmail.com](mailto:krishisahaay@gmail.com)
 🔗 [Project Link](https://github.com/SachinManral/KrishiSahaay)
 
 ---
