@@ -1,39 +1,56 @@
 const express = require('express');
 const connectDB = require('./config/db');
-const path = require('path');
 const cors = require('cors');
-require('dotenv').config();
+const helmet = require('helmet');
+const morgan = require('morgan');
+const path = require('path');
+const dotenv = require('dotenv');
 
+// Load environment variables
+dotenv.config();
+
+// Initialize Express app
 const app = express();
 
-// Connect Database
+// Connect to MongoDB
 connectDB();
 
-// Init Middleware
-app.use(express.json({ extended: false }));
+// Middleware
 app.use(cors());
+app.use(helmet());
+app.use(express.json({ extended: false, limit: '50mb' }));
+app.use(express.urlencoded({ extended: false, limit: '50mb' }));
 
-// Add a simple route for the root path
-app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to KrishiSahay API' });
-});
+// Logging in development mode
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
-// Define Routes
+// Define routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
+// If profile route exists, uncomment this line
+// app.use('/api/profile', require('./routes/profile'));
+app.use('/api/ai-assistance', require('./routes/ai-assistance'));
 app.use('/api/weather', require('./routes/weather'));
-// Add any other routes you have
+app.use('/api/market', require('./routes/market'));
+app.use('/api/logistics', require('./routes/logistics'));
+app.use('/api/storage', require('./routes/storage'));
+app.use('/api/community', require('./routes/community'));
+app.use('/api/ai-assistance', require('./routes/ai-assistance'));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, '../client/build')));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
   });
 }
 
-const PORT = process.env.PORT || 5000;
+// Define port - ensure this is set to 5002
+const PORT = process.env.PORT || 5002;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// Start server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

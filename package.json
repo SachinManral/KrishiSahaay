@@ -6,8 +6,9 @@
   "scripts": {
     "start": "cd server && npm start",
     "server": "cd server && npm run server",
-    "client": "cd client && set PORT=3000 && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install"
   },
   "keywords": [
     "agriculture",
@@ -16,19 +17,10 @@
   ],
   "author": "KrishiSahay Team",
   "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
   "dependencies": {
-    "axios": "^1.8.4",
-    "google-auth-library": "^9.15.1",
-    "i18next": "^21.10.0",
-    "i18next-browser-languagedetector": "^8.0.4",
-    "i18next-http-backend": "^3.0.2",
+    "@google/generative-ai": "^0.24.0",
+    "concurrently": "^8.2.0",
     "krishisahay": "file:",
-    "multer": "^1.4.5-lts.2",
-    "node-cache": "^5.1.2",
-    "openai": "^4.91.1",
-    "react-i18next": "^11.18.6"
+    "node-fetch": "^3.3.2"
   }
 }
