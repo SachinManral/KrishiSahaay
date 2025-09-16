@@ -181,5 +181,3 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 🔗 [Project Link](https://github.com/SachinManral/KrishiSahaay)
 
 ---
-
-Let me know if you’d like badges, usage GIFs, or markdown tables added!
